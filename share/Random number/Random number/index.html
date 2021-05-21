@@ -1167,7 +1167,6 @@
 <span class="p">}</span>
 </pre></div>
 </td></tr></table>
-
 <p>在调用伪随机数生成函数之前通过seed=gettime()语句就完成了种子的初始化。</p>
 <h3 id="2_1">2. 平方取中法<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
 <p>平方取中法是由冯·诺依曼在1946年提出的，其基本思想为：将数列中的第 <span><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span> 项（假设其有 m 位）平方，取得到的 2m 位数（若不足 2m 位，在最高位前补0）中间部分的 m 位数字，作为 <span><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span> 的下一项 <span><span class="MathJax_Preview">a_{i-1}</span><script type="math/tex">a_{i-1}</script></span>，由此产生一个伪随机数数列。即：</p>
@@ -1305,7 +1304,6 @@
     3. 如果 4 是 M 的因子，则 a − 1 被 4 整除$$
 </pre></div>
 </td></tr></table>
-
 <p>常取 <span><span class="MathJax_Preview">M = 2L, \, L</span><script type="math/tex">M = 2L, \, L</script></span> 为计算机中整数的尾数字长。这时根据上述定理，建议取 <span><span class="MathJax_Preview">a = 4\alpha+1, \ c = 2\beta + 1</span><script type="math/tex">a = 4\alpha+1, \ c = 2\beta + 1</script></span>，<span><span class="MathJax_Preview">\  alpha</span><script type="math/tex">\  alpha</script></span> 和 <span><span class="MathJax_Preview">\beta</span><script type="math/tex">\beta</script></span> 为任意正整数，<span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span> 为任意非负整数，这样的混合同余发生器是满周期的，周期为 <span><span class="MathJax_Preview">2L</span><script type="math/tex">2L</script></span> 。好的均匀分布随机数发生器应该周期足够长，统计性质符合均匀分布序列之间独立性好。把同余法生成的数列看成随机变量序列 <span><span class="MathJax_Preview">\{x_n \}</span><script type="math/tex">\{x_n \}</script></span>，在满周期时，可认为 <span><span class="MathJax_Preview">x_n</span><script type="math/tex">x_n</script></span> 是从 <span><span class="MathJax_Preview">0 \sim M − 1</span><script type="math/tex">0 \sim M − 1</script></span>中随机等可能选取的，即<span><span class="MathJax_Preview">P\{x_n = i\} = 1/M, \quad i = 0, \, 1, \, ..., \,M – 1</span><script type="math/tex">P\{x_n = i\} = 1/M, \quad i = 0, \, 1, \, ..., \,M – 1</script></span>，这时有，</p>
 <div>
 <div class="MathJax_Preview">\begin{align} 
@@ -1416,7 +1414,6 @@ Var(R_n)=\frac{1}{12}-\frac{1}{12M^2} \approx \frac{1}{12}</script>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>定义（素元）： 设正整数 a 和素数 M 互素，若 a 对模 M 的阶数 V 满足 V = M − 1，则称 a 为 M 的素元 (或原根)。
 </pre></div>
 </td></tr></table>
-
 <p>乘同余发生器中取 a 为 M 的素元可以达到最大周期 M − 1。</p>
 <p>例 M = 7 是素数，取 a = 3 与 M 互素。考虑素数模乘同余发生器，</p>
 <div>
@@ -1509,7 +1506,6 @@ $$R_n=(U_n/30269+V_n/30307+W_n/30323) \ (mod \, 1)</script>
 <span class="nx">print</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p>在 R 软件中，用 runif(n) 产生 n 个 <span><span class="MathJax_Preview">U(0,1)</span><script type="math/tex">U(0,1)</script></span> 均匀分布的随机数。R 软件提供了若干种随机数发生器，可以用 RNGkind函数切换。在使用随机数进行随机模拟研究时，如果希望模拟研究的结果可重复，就需要在模拟开始时设置固定的随机数种子。虽然不同的随机数发生器种子的形式有所不同，在 R 中，总是可以用函数 set.seed(seed) 来设置种子，其中 seed 是一个序号，实际的种子由这个序号决定。</p>
 <h3 id="6">6. 梅森旋转演算法<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
 <p>最后，我们再介绍一种当今效果较好，使用较广的伪随机数算法，梅森旋转演算法（Mersenne twister）。由于机理较为复杂，所以主要给出给出在python中的实现，对于具体原理只做概述。</p>

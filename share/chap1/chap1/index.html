@@ -1310,91 +1310,72 @@
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>x<span class="o">&lt;-</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">);</span>x
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1 2 3 4
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>y<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">);</span>y
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 2 3 4 5
 </pre></div>
 </td></tr></table>
-
 <p>式中c表示连接内部的数值，x是定义的向量名，上面显示的&gt;不是命令的一部分，只是标识符，表示R已经准备好接受下一个命令。</p>
 <p>补充说明：在R中我们可以通过多次按向上的箭头来显示前面己输入的命令，用户可以对这些命令重新编辑。用户可以通过输入？+想要查询的函数名来查看该函数的帮助文档，比如输入?funcname 就可以查看有关函数funcname的更多信息。</p>
 <p>我们可以用R进行两数值向量的求和运算。但这建立在两向量的长度一样的前提下，在R中查看向量长度的函数是length()。我们需要先查看向量长度是否一致，再对向量进行求和运算。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">length</span><span class="p">(</span>x<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 4
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">length</span><span class="p">(</span>y<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 4
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>x<span class="o">+</span>y
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 3 5 7 9
 </pre></div>
 </td></tr></table>
-
 <p>在R中我们可以用ls()查看所有的对象列表，用函数rm()可以从对象列表中删除那些我们不想要的对象。如果要同时删除所有对象列表中的对象，我们可以用rm(list=ls())来实现。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">ls</span><span class="p">()</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] &quot;x&quot; &quot;y&quot;
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">rm</span><span class="p">(</span>x<span class="p">,</span>y<span class="p">)</span>
 <span class="kp">ls</span><span class="p">()</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## character(0)
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">rm</span><span class="p">(</span><span class="kt">list</span><span class="o">=</span><span class="kp">ls</span><span class="p">())</span>
 <span class="kp">ls</span><span class="p">()</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## character(0)
 </pre></div>
 </td></tr></table>
-
 <p>建立数值矩阵需要用的函数是matrix()函数，我们用？matrix来获取该函数的用法:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kt">matrix</span><span class="p">(</span>data <span class="o">=</span> <span class="kc">NA</span><span class="p">,</span>nrow <span class="o">=</span> <span class="m">1</span><span class="p">,</span>ncol <span class="o">=</span> <span class="m">1</span><span class="p">,</span>byrow <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>dimnames <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      [,1]
 ## [1,]   NA
 </pre></div>
 </td></tr></table>
-
 <p>其中data参数是设置数据向量的，nrow参数是设置矩阵行数的，ncol参数是设置矩阵列数的，byrow=FALSE是表示默认数据按列排列，dimnames是设置矩阵的行名和列名的。下面我们通过一个实例对该函数的应用进行说明：</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kt">matrix</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">2</span><span class="p">),</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span>byrow <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      [,1] [,2]
@@ -1402,7 +1383,6 @@
 ## [2,]    9    2
 </pre></div>
 </td></tr></table>
-
 <p>在参数设置中byrow=TRUE表明数据是按行排列的，需要注意的是，在输入上面的命令时，我们没有将这个矩阵赋值给一个对象，这就意味着这个矩阵仅仅是用于打印在屏幕上而不能为将来计算所用。</p>
 <p>sqrt ()函数可以对一个向量或矩阵中的每个元素开方。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -1410,7 +1390,6 @@
 x
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      [,1] [,2]
@@ -1418,11 +1397,9 @@ x
 ## [2,]    2    4
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">sqrt</span><span class="p">(</span>x<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##          [,1]     [,2]
@@ -1430,22 +1407,18 @@ x
 ## [2,] 1.414214 2.000000
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>y<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">16</span><span class="p">)</span>
 <span class="kp">sqrt</span><span class="p">(</span>y<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1 2 3 4
 </pre></div>
 </td></tr></table>
-
 <p>命令x^2或者x**2用来计算x中每个元素的2次幂;但是任意次幂都是可能的，包括小数次幂和负次幂。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>x<span class="o">^</span><span class="m">2</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      [,1] [,2]
@@ -1453,11 +1426,9 @@ x
 ## [2,]    4   16
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>x<span class="o">**</span><span class="m">2</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      [,1] [,2]
@@ -1465,11 +1436,9 @@ x
 ## [2,]    4   16
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>x<span class="o">^</span><span class="m">1.8</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##          [,1]      [,2]
@@ -1477,11 +1446,9 @@ x
 ## [2,] 3.482202 12.125733
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>x<span class="o">**</span><span class="m">1.8</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##          [,1]      [,2]
@@ -1489,28 +1456,23 @@ x
 ## [2,] 3.482202 12.125733
 </pre></div>
 </td></tr></table>
-
 <p>rnorm()函数可以产生一个随机正态变量的向量，函数中的第一个参数是样本的容量,第二个参数是生成的正态随机变量的均值,第三个参数是生成的正态随机变量的标准差,在第二、第三参数缺省时，生成的标准正态变量的向量。每次调用这个函数时，都会产生不同的结果。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rnorm<span class="p">(</span><span class="m">10</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##  [1] -1.2304999  0.4081685 -1.2052690  0.3825409 -0.1372028  0.2992457
 ##  [7]  0.0749808 -1.6470728 -0.1956568  1.1595331
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rnorm<span class="p">(</span><span class="m">10</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##  [1]  0.31480005  0.19268756 -0.79564998 -0.39982639 -0.95728862
 ##  [6] -0.47176034 -0.44699134 -0.82815213 -1.32034764 -0.03884416
 </pre></div>
 </td></tr></table>
-
 <p>我们可以用cor()函数计算两个相关的数值变量x和y之间的相关系数。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -1519,36 +1481,30 @@ y<span class="o">=</span>x<span class="o">+</span>rnorm<span class="p">(</span><
 cor<span class="p">(</span>x<span class="p">,</span>y<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.9910347
 </pre></div>
 </td></tr></table>
-
 <p>有时候我们希望代码产生完全相同的一组随机数，可以用set. seed ()函数去做。set. seed ()函数中的参数可以是任意整数。只要set.seed()函数内部的整数值一样，调用rnorm(n)得到的向量就完全一样。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
 rnorm<span class="p">(</span><span class="m">10</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##  [1] -0.56047565 -0.23017749  1.55870831  0.07050839  0.12928774
 ##  [6]  1.71506499  0.46091621 -1.26506123 -0.68685285 -0.44566197
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
 rnorm<span class="p">(</span><span class="m">10</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##  [1] -0.56047565 -0.23017749  1.55870831  0.07050839  0.12928774
 ##  [6]  1.71506499  0.46091621 -1.26506123 -0.68685285 -0.44566197
 </pre></div>
 </td></tr></table>
-
 <p>mean()函数和var()函数分别可以计算向量的均值和方差，结合var()函数和sqrt()函数可以计算向量的标准差，也可直接运用sd()函数，实例如下：</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -1557,35 +1513,27 @@ y<span class="o">=</span>rnorm<span class="p">(</span><span class="m">100</span>
 <span class="kp">mean</span><span class="p">(</span>y<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.01103557
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var<span class="p">(</span>y<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.7328675
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">sqrt</span><span class="p">(</span>var<span class="p">(</span>y<span class="p">))</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.8560768
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sd<span class="p">(</span>y<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.8560768
 </pre></div>
 </td></tr></table>
-
 <h4 id="232">2.3.2 图形<a class="headerlink" href="#232" title="Permanent link">&para;</a></h4>
 <p>在绘图中我们最常用的方法是plot()函数，比如我们可以用plot(x,y)产生一个数据x对于数据y的散点图。plot()函数内有许多可自选的设置参数，例如加入参数xlab可以改变横坐标的标题。具体的自选参数可以通过? plot找到。实例如下：</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -1595,12 +1543,10 @@ y<span class="o">=</span>rnorm<span class="p">(</span><span class="m">100</span>
 plot<span class="p">(</span>x<span class="p">,</span>y<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-12-1.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>plot<span class="p">(</span>x<span class="p">,</span>y<span class="p">,</span>xlab <span class="o">=</span> <span class="s">&#39;this is a X-axis&#39;</span><span class="p">,</span>ylab <span class="o">=</span> <span class="s">&#39;this is a y-axis&#39;</span><span class="p">,</span>main <span class="o">=</span> <span class="s">&#39;plot of X vs Y&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-12-2.png" /><!-- --></p>
 <p>我们可以保存R输出的图，用pdf()函数可以建立一个pdf文件，而用jpeg()函数建立一个jpeg格式的输出文件。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -1616,13 +1562,11 @@ plot<span class="p">(</span>x<span class="p">,</span>y<span class="p">,</span>co
 dev.off<span class="p">()</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## png
 ##   2
 </pre></div>
 </td></tr></table>
-
 <p>函数dev. off()表示用R创建图形的工作到此为止。另外一种比较简单的方式是将这个图形窗口里的图形复制粘贴到一个合适的文件类型里，例如一个word 文件。</p>
 <p>函数seq ()可用来创建一个序列。例如，seq(a,b)是在a和b之间建立一个整数向量,其中有许多参数选项,例如,seq(0,1,length=10) 建立一个在0 和l 之间等距的10 个数的序列，seq(0,1,by=0.1) 建立一个在0 和l 之间步长为0.1的序列,输入3: 11 是seq (3: 11) 的一个速记法，两种写法输出一样。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -1630,33 +1574,26 @@ dev.off<span class="p">()</span>
 x
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##  [1]  1  2  3  4  5  6  7  8  9 10
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>x<span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">10</span>
 x
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##  [1]  1  2  3  4  5  6  7  8  9 10
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>x<span class="o">=</span><span class="kp">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">5</span><span class="p">,</span>by<span class="o">=</span><span class="m">0.5</span><span class="p">);</span>x
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>x<span class="o">=</span><span class="kp">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">10</span><span class="p">,</span>length <span class="o">=</span> <span class="m">20</span><span class="p">);</span>x
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##  [1]  1.000000  1.473684  1.947368  2.421053  2.894737  3.368421  3.842105
@@ -1664,7 +1601,6 @@ x
 ## [15]  7.631579  8.105263  8.578947  9.052632  9.526316 10.000000
 </pre></div>
 </td></tr></table>
-
 <h4 id="233">2.3.3 索引数据<a class="headerlink" href="#233" title="Permanent link">&para;</a></h4>
 <p>经常需要考察一组数据的其中一部分。假设数据保存在一个矩阵A 里。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -1672,7 +1608,6 @@ x
 A
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1684,20 +1619,16 @@ A
 ## [4,]    4    8   12   16
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>A<span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 10
 </pre></div>
 </td></tr></table>
-
 <p>A[2,3]表示选择矩阵A中第2 行第3列所对应的元素。中括号的第一个数指示的是行，第二个数指示的是列。有的时候可以选择多行多列，通过设置向量作为选择的指标集。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>A<span class="p">[</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">),</span><span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">)]</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      [,1] [,2]
@@ -1705,11 +1636,9 @@ A
 ## [2,]    7   15
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>A<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="o">:</span><span class="m">3</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1719,11 +1648,9 @@ A
 ## [3,]    7   11
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>A<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,]</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      [,1] [,2] [,3] [,4]
@@ -1731,11 +1658,9 @@ A
 ## [2,]    2    6   10   14
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>A<span class="p">[,</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1747,16 +1672,13 @@ A
 ## [4,]    4    8
 </pre></div>
 </td></tr></table>
-
 <p>最后的两个例子表示的是要么只有行没有列的索引要么只有列没有行的索引。在R 中这样的设置表示包含所有的列或所有的行。R 中把一个单行或单列称为一个向量。在索引里用一个负号"-"告诉R 不包含指示的行或列。dim ()函数输出一个矩阵的行数和列数。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">dim</span><span class="p">(</span>A<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 4 4
 </pre></div>
 </td></tr></table>
-
 <h4 id="234">2.3.4 载入数据<a class="headerlink" href="#234" title="Permanent link">&para;</a></h4>
 <p>大部分数据分析的第一步，需要先将一个数据集导入到R中，read.table()函数是最基本的方法之一，用write. table ()函数可输出数据。</p>
 <p>在试图加载一个数据之前，必须确保R 知道所要搜寻的数据所在的日录。例如在Windows系统里可以在File 菜单下用Change dir… 选项去选择目录。</p>
@@ -1766,7 +1688,6 @@ A
 data<span class="o">=</span>read.table<span class="p">(</span><span class="s">&#39;data.txt&#39;</span><span class="p">);</span>data
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1778,11 +1699,9 @@ data<span class="o">=</span>read.table<span class="p">(</span><span class="s">&#
 ## 4  3  4  5 66
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>data<span class="o">=</span>read.table<span class="p">(</span><span class="s">&#39;data.txt&#39;</span><span class="p">,</span>header <span class="o">=</span> <span class="bp">T</span><span class="p">);</span>data
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1792,11 +1711,9 @@ data<span class="o">=</span>read.table<span class="p">(</span><span class="s">&#
 ## 3 3 4 5 66
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>str<span class="p">(</span>data<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1808,11 +1725,9 @@ data<span class="o">=</span>read.table<span class="p">(</span><span class="s">&#
 ##  $ d: int  45 56 66
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fix<span class="p">(</span>data<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p>当某个数据集被正确加载后，因为R 假定变量名称也是数据的一部分，所以会在数据的第一行列出这些变量名。该数据集还有大量缺失观测值，用问号?表示缺失数据。缺失数据在实际问题中是一种比较普遍的现象。在read. table ( )函数里用选项header = T (或header = TRUE) 告知R ，文件的第一行包含变量名，用选项口s. strings 告知R 在扫描数据的任何位置只要遇到指定的字符特征或者一个特征集(如问号标记) ，应该在数据矩阵中对这条数据做缺失标记。</p>
 <p>Excel 是一种常见的数据存储程序。如果数据被保存成一个csv 文件(以"，"分隔的数据文件) ，那么可以用read. csv ()函数很容易将数据载入R,在read.table()函数中设定sep=”,”也是一样的。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -1820,7 +1735,6 @@ data<span class="o">=</span>read.table<span class="p">(</span><span class="s">&#
 read.csv<span class="p">(</span><span class="s">&#39;sample-data.csv&#39;</span><span class="p">,</span>header <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1834,11 +1748,9 @@ read.csv<span class="p">(</span><span class="s">&#39;sample-data.csv&#39;</span>
 ## 5  5    E      F  15    159   45.5
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>read.csv<span class="p">(</span><span class="s">&#39;sample-data.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1852,7 +1764,6 @@ read.csv<span class="p">(</span><span class="s">&#39;sample-data.csv&#39;</span>
 ## 5  5    E      F  15    159   45.5
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>data<span class="o">=</span>read.csv<span class="p">(</span><span class="s">&#39;sample-data.csv&#39;</span><span class="p">)</span>
@@ -1860,26 +1771,21 @@ fix<span class="p">(</span>data<span class="p">)</span>
 <span class="kp">dim</span><span class="p">(</span>data<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 5 6
 </pre></div>
 </td></tr></table>
-
 <p>如果数据中含有缺失值，我们可以通过na.omit()函数去除包含缺失值的观测。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>data<span class="p">[</span><span class="m">6</span><span class="p">,</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">)]</span><span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="kc">NA</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## Warning in `[&lt;-.factor`(`*tmp*`, iseq, value = 2): invalid factor level, NA
 ## generated
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>data
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1895,11 +1801,9 @@ fix<span class="p">(</span>data<span class="p">)</span>
 ## 6  1 &lt;NA&gt;   &lt;NA&gt;  NA     NA     NA
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>na.omit<span class="p">(</span>data<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1913,29 +1817,24 @@ fix<span class="p">(</span>data<span class="p">)</span>
 ## 5  5    E      F  15    159   45.5
 </pre></div>
 </td></tr></table>
-
 <p>当这些数据被准确载入后，可以用narnes ()查看该数据的变量名。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">names</span><span class="p">(</span>data<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] &quot;ID&quot;     &quot;name&quot;   &quot;gender&quot; &quot;age&quot;    &quot;height&quot; &quot;weight&quot;
 </pre></div>
 </td></tr></table>
-
 <h4 id="235">2.3.5 其他的图形和数据汇总<a class="headerlink" href="#235" title="Permanent link">&para;</a></h4>
 <p>在调用数据集中的某列属性值时，只说姓名是不能正确的调用该属性列的，正确的做法是用数据集$属性列的方式调用，或者用attach(属性集)释放属性，然后调用属性名即可。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>plot<span class="p">(</span>data<span class="o">$</span>ID<span class="p">,</span>data<span class="o">$</span>age<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-22-1.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">attach</span><span class="p">(</span>data<span class="p">)</span>
 plot<span class="p">(</span>ID<span class="p">,</span>age<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-22-2.png" /><!-- --></p>
 <p>我们可以用as. factor ()函数将一个定量的变量转换成一个定性的变量</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -1943,7 +1842,6 @@ plot<span class="p">(</span>ID<span class="p">,</span>age<span class="p">)</span
 str<span class="p">(</span>data<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1959,47 +1857,39 @@ str<span class="p">(</span>data<span class="p">)</span>
 ##  $ weight: num  42 49 41.5 52 45.5 NA
 </pre></div>
 </td></tr></table>
-
 <p>如果要绘制在x 轴上的变量是定性的，箱线图( boxplot) 将自动通过plot ()函数产生。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>plot<span class="p">(</span>data<span class="o">$</span>ID<span class="p">,</span>data<span class="o">$</span>age<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-24-1.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>plot<span class="p">(</span>data<span class="o">$</span>ID<span class="p">,</span>data<span class="o">$</span>age<span class="p">,</span>col<span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-24-2.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>plot<span class="p">(</span>data<span class="o">$</span>ID<span class="p">,</span>data<span class="o">$</span>age<span class="p">,</span>col<span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span>varwidth <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
 plot<span class="p">(</span>data<span class="o">$</span>ID<span class="p">,</span>data<span class="o">$</span>age<span class="p">,</span>col<span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span>varwidth <span class="o">=</span> <span class="bp">T</span><span class="p">,</span>xlab<span class="o">=</span><span class="s">&#39;ID&#39;</span><span class="p">,</span>ylab<span class="o">=</span><span class="s">&#39;age&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-24-3.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>hist<span class="p">(</span>data<span class="o">$</span>age<span class="p">,</span>col<span class="o">=</span><span class="m">2</span><span class="p">,</span>breaks<span class="o">=</span><span class="m">15</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-24-4.png" /><!-- --></p>
 <p>hist ()函数可以被用来绘制直方图。注意col =2 与col ="red" 两条语句效果是一样的。</p>
 <p>pairs ()函数可用于建立一个对任何指定数据集中每一对变量的散点图矩阵。我们也可以为这些变量的子集产生一个散点图。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pairs<span class="p">(</span>data<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-25-1.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pairs<span class="p">(</span><span class="o">~</span>gender<span class="o">+</span>age<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-25-2.png" /><!-- --></p>
 <p>紧随plot ()函数之后的identify ()函数提供了一个有用的交互识别方法，可以对图上的每个点指定显示某个变量值。例子中在identify ()输入了三个参数: x 轴变量， y 轴变量，以及我们希望在屏幕上为每个数据点打印出的变量名称。单击一个图上的某个点将引导R 打印指定变量上这个点的值。右击这个图将退出identify ()函数。默认情况下，在identify ()函数下显示的数字代表这个点的行号。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">attach</span><span class="p">(</span>data<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## The following objects are masked from data (pos = 3):
@@ -2007,43 +1897,35 @@ plot<span class="p">(</span>data<span class="o">$</span>ID<span class="p">,</spa
 ##     age, gender, height, ID, name, weight
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>plot<span class="p">(</span>age<span class="p">,</span>height<span class="p">)</span>
 identify<span class="p">(</span>age<span class="p">,</span>height<span class="p">,</span>weight<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-26-1.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## integer(0)
 </pre></div>
 </td></tr></table>
-
 <p>在一个指定数据集中， summary ()函数对每个变量给出一个数值汇总(描述统计信息)。对于定性变量如name ， R 将列出那些落在每个类别里的观测个数信息。也可以对数值变量产生一个汇总统计。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">summary</span><span class="p">(</span>gender<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##    F    M NA&#39;s
 ##    3    2    1
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">summary</span><span class="p">(</span>age<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s
 ##    14.0    14.0    15.0    14.8    15.0    16.0       1
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">summary</span><span class="p">(</span>data<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2061,7 +1943,6 @@ identify<span class="p">(</span>age<span class="p">,</span>height<span class="p"
 ##                          NA&#39;s   :1      NA&#39;s   :1       NA&#39;s   :1
 </pre></div>
 </td></tr></table>
-
 <p>当用R 完成分析时，可以输入q() 关闭它，或者退出。当退出R 时，可以选择保存当前工作区，这样就对下次使用这次R 会话里已经创建的所有的对象(如数据集)做了布置。在退出R 之前，可以用savehistory ()函数将最近会话里输入的所有命令都保存成一个记录;下次进入R 时，可以用loadhistory ()函数载入这些历史记录。</p>
 <h2 id="_3">习题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="8">8<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
@@ -2071,22 +1952,18 @@ identify<span class="p">(</span>age<span class="p">,</span>height<span class="p"
 data<span class="p">(</span>College<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p>（b）修改第一列为行名</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>fix<span class="p">(</span>College<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p>（c）</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">attach</span><span class="p">(</span>College<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p>（c）i 查看每列的情况</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">summary</span><span class="p">(</span>College<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2158,18 +2035,15 @@ data<span class="p">(</span>College<span class="p">)</span>
 ##  Max.   :118.00
 </pre></div>
 </td></tr></table>
-
 <p>（c）ii 绘制pair图</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pairs<span class="p">(</span>College<span class="p">[,</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">])</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-32-1.png" /><!-- --></p>
 <p>（c）iii 绘制outstate~private箱线图</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>plot<span class="p">(</span>Outstate<span class="o">~</span>Private<span class="p">,</span>main<span class="o">=</span><span class="s">&#39;outstate~private箱线图&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-33-1.png" /><!-- --></p>
 <p>（c）iv 创建Elite变量</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -2183,22 +2057,18 @@ college <span class="o">=</span><span class="kt">data.frame</span><span class="p
 <span class="kp">summary</span><span class="p">(</span>Elite<span class="p">)</span> <span class="c1">#78</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##  No Yes
 ## 699  78
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>plot<span class="p">(</span>Outstate<span class="o">~</span>Elite<span class="p">,</span>main<span class="o">=</span><span class="s">&#39;Outstate~Elite箱线图&#39;</span><span class="p">)</span> <span class="c1">#绘制图</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-34-1.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">colnames</span><span class="p">(</span>College<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2208,13 +2078,11 @@ college <span class="o">=</span><span class="kt">data.frame</span><span class="p
 ## [16] &quot;perc.alumni&quot; &quot;Expend&quot;      &quot;Grad.Rate&quot;
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>par<span class="p">(</span>mfrow<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
 <span class="kp">summary</span><span class="p">(</span>College<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2286,34 +2154,28 @@ college <span class="o">=</span><span class="kt">data.frame</span><span class="p
 ##  Max.   :118.00
 </pre></div>
 </td></tr></table>
-
 <p>（c）v</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>hist<span class="p">(</span>Apps<span class="p">,</span>breaks<span class="o">=</span><span class="m">10</span><span class="p">);</span>hist<span class="p">(</span>Accept<span class="p">);</span>hist<span class="p">(</span>Enroll<span class="p">);</span>hist<span class="p">(</span>Top10perc<span class="p">,</span>breaks<span class="o">=</span><span class="m">20</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-35-1.png" /><!-- --><img alt="" src="../figure-html/unnamed-chunk-35-2.png" /><!-- --><img alt="" src="../figure-html/unnamed-chunk-35-3.png" /><!-- --><img alt="" src="../figure-html/unnamed-chunk-35-4.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>hist<span class="p">(</span>Top25perc<span class="p">,</span>breaks<span class="o">=</span><span class="m">20</span><span class="p">);</span>hist<span class="p">(</span><span class="bp">F</span><span class="m">.</span>Undergrad<span class="p">,</span>breaks<span class="o">=</span><span class="m">10</span><span class="p">);</span>hist<span class="p">(</span>P.Undergrad<span class="p">);</span>hist<span class="p">(</span>Outstate<span class="p">,</span>breaks<span class="o">=</span><span class="m">20</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-35-5.png" /><!-- --><img alt="" src="../figure-html/unnamed-chunk-35-6.png" /><!-- --><img alt="" src="../figure-html/unnamed-chunk-35-7.png" /><!-- --><img alt="" src="../figure-html/unnamed-chunk-35-8.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>hist<span class="p">(</span>Room.Board<span class="p">);</span>hist<span class="p">(</span>Books<span class="p">,</span>breaks<span class="o">=</span><span class="m">15</span><span class="p">);</span>hist<span class="p">(</span>Personal<span class="p">);</span>hist<span class="p">(</span>PhD<span class="p">,</span>breaks<span class="o">=</span><span class="m">20</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-35-9.png" /><!-- --><img alt="" src="../figure-html/unnamed-chunk-35-10.png" /><!-- --><img alt="" src="../figure-html/unnamed-chunk-35-11.png" /><!-- --><img alt="" src="../figure-html/unnamed-chunk-35-12.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>hist<span class="p">(</span>Terminal<span class="p">);</span>hist<span class="p">(</span>S.F.Ratio<span class="p">);</span>hist<span class="p">(</span>perc.alumni<span class="p">,</span>breaks <span class="o">=</span> <span class="m">20</span><span class="p">);</span>hist<span class="p">(</span>Expend<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-35-13.png" /><!-- --><img alt="" src="../figure-html/unnamed-chunk-35-14.png" /><!-- --><img alt="" src="../figure-html/unnamed-chunk-35-15.png" /><!-- --><img alt="" src="../figure-html/unnamed-chunk-35-16.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>par<span class="p">(</span>mfrow<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
 hist<span class="p">(</span>Grad.Rate<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-35-17.png" /><!-- --></p>
 <p>（c）vi</p>
 <p>我们绘制了outstate和private的箱线图，可以发现，当private为yes时候，oustate值明显偏高，即私立大学征收非本州学生学费明显高于公立学校， Elite=Yes含义是“有超过50%的学生来自排名在10%顶尖高中”的大学，也就是说这些是全美非常优秀的大学，总共78所。同时可以发现，越顶尖的大学，对非本州学生的学费明显高于普通大学。</p>
@@ -2323,18 +2185,15 @@ hist<span class="p">(</span>Grad.Rate<span class="p">)</span>
 hist<span class="p">(</span>data2<span class="o">$</span>Grad.Rate<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-36-1.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">summary</span><span class="p">(</span>data2<span class="o">$</span>Grad.Rate<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
 ##   51.00   74.25   84.50   83.38   93.00  100.00
 </pre></div>
 </td></tr></table>
-
 <h3 id="9">9<a class="headerlink" href="#9" title="Permanent link">&para;</a></h3>
 <p>该实验将对 Auto数据集进行研究。首先确认有缺失数据的行已经从该数据中删除了。</p>
 <p>（a）哪些预测变量是定量的，哪些是定性的？</p>
@@ -2346,17 +2205,14 @@ hist<span class="p">(</span>data2<span class="o">$</span>Grad.Rate<span class="p
 <span class="kn">library</span><span class="p">(</span>car<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## Loading required package: carData
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Auto<span class="o">=</span>na.omit<span class="p">(</span>Auto<span class="p">)</span>
 <span class="kp">summary</span><span class="p">(</span>Auto<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2406,7 +2262,6 @@ hist<span class="p">(</span>data2<span class="o">$</span>Grad.Rate<span class="p
 ##  (Other)           :365
 </pre></div>
 </td></tr></table>
-
 <p>（b）每个定量预测变量的取值范围是什么?可以用 range() 函数回答。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -2431,7 +2286,6 @@ hist<span class="p">(</span>data2<span class="o">$</span>Grad.Rate<span class="p
 datarange<span class="p">(</span>Auto<span class="p">,</span><span class="kp">dim</span><span class="p">(</span>Auto<span class="p">)[</span><span class="m">2</span><span class="p">]</span><span class="m">-1</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2451,7 +2305,6 @@ datarange<span class="p">(</span>Auto<span class="p">,</span><span class="kp">di
 ## [8,] &quot;origin:    1-3&quot;
 </pre></div>
 </td></tr></table>
-
 <p>（c）每个定量预测变量的均值和方差是多少?</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -2478,7 +2331,6 @@ datarange<span class="p">(</span>Auto<span class="p">,</span><span class="kp">di
 datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">dim</span><span class="p">(</span>Auto<span class="p">)[</span><span class="m">2</span><span class="p">]</span><span class="m">-1</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2498,12 +2350,10 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ## [8,] &quot;origin:    mean 1.58 var 1&quot;
 </pre></div>
 </td></tr></table>
-
 <p>（d）现在剔除第10个和第85个观测。剔除后数据的子集中的每个预测变量的取值范围、均值、标准差是多少?</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>datarange<span class="p">(</span>Auto<span class="p">[</span><span class="kt">c</span><span class="p">(</span><span class="m">-10</span><span class="p">,</span><span class="m">-85</span><span class="p">)],</span><span class="kp">dim</span><span class="p">(</span>Auto<span class="p">)[</span><span class="m">2</span><span class="p">]</span><span class="m">-1</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2523,11 +2373,9 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ## [8,] &quot;origin:    1-3&quot;
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>datameanvar<span class="p">(</span>Auto<span class="p">[</span><span class="kt">c</span><span class="p">(</span><span class="m">-10</span><span class="p">,</span><span class="m">-85</span><span class="p">)],</span><span class="kp">dim</span><span class="p">(</span>Auto<span class="p">)[</span><span class="m">2</span><span class="p">]</span><span class="m">-1</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2547,7 +2395,6 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ## [8,] &quot;origin:    mean 1.58 var 1&quot;
 </pre></div>
 </td></tr></table>
-
 <p>（e）用原始数据集，用图形的方式研究预测变量的性质，自选散点图或其他图形工具。创建一些能够直观反映预测变量之间关系的图形，讨论你的发现。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -2558,7 +2405,6 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 <span class="p">}</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-40-1.png" /><!-- --></p>
 <p>由图可知mpg和displacement、horsepower、weight之间呈现负相关的关系，但是和cylinders、acceleration、year、origin之间呈现正相关的关系。</p>
 <p>（f）假设需要一些变量预测mpg(每英里汽油消耗量)。图中是否提供了一些可用来预测 mpg 的预测变量的线索?证实你的回答。</p>
@@ -2568,7 +2414,6 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 <span class="kp">summary</span><span class="p">(</span>model1<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2618,7 +2463,6 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ## F-statistic: 252.4 on 7 and 384 DF,  p-value: &lt; 2.2e-16
 </pre></div>
 </td></tr></table>
-
 <h3 id="10">10<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
 <p>本习题是关于 Boston 房屋数据集的。</p>
 <p>（a）开始载入Boston 数据集。 Boston 数据集是 MASS 软件包中的一部分。</p>
@@ -2639,11 +2483,9 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 <span class="o">?</span>Boston
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## starting httpd help server ... done
 </pre></div>
 </td></tr></table>
-
 <p>数据框有506行和14列。
 数据框的行代表不同的郊区样本。
 数据框包含以下列：</p>
@@ -2675,7 +2517,6 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 <span class="p">}</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-43-1.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -2688,7 +2529,6 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 <span class="p">}</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-43-2.png" /><!-- --></p>
 <p>由图可见每个变量与crim的相关性都不强，且对于每个变量都是当其在特定取值时会是crim陡然增高，但是在其他情况下，对crim的影响不大，这说明，只有特定的人群才会有较高的犯罪率，而不是随着一些变量的变化，犯罪率也逐渐变化。</p>
 <p>（c） 是否有一些预测变量与人均犯罪比例有关?如果有，请解释这个关系。</p>
@@ -2697,7 +2537,6 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 <span class="kp">summary</span><span class="p">(</span>model2<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2759,13 +2598,11 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ## F-statistic: 31.47 on 13 and 492 DF,  p-value: &lt; 2.2e-16
 </pre></div>
 </td></tr></table>
-
 <p>通过回归拟合可以看出，在显著性水平为0.05的情况下，还是有一些变量对crim产生一定的影响的，其中包括zn、dis、rad、black、medv。</p>
 <p>（d）波士顿郊外的犯罪率会特别高吗?税率高吗?师生比高吗?在这个空间范围对每个预测变量进行讨论。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>datarange<span class="p">(</span>Boston<span class="p">,</span><span class="kp">dim</span><span class="p">(</span>Boston<span class="p">)[</span><span class="m">2</span><span class="p">])</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2797,11 +2634,9 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ## [14,] &quot;medv:    5-50&quot;
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>datameanvar<span class="p">(</span>Boston<span class="p">,</span><span class="kp">dim</span><span class="p">(</span>Boston<span class="p">)[</span><span class="m">2</span><span class="p">])</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2833,40 +2668,32 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ## [14,] &quot;medv:    mean 22.53 var 85&quot;
 </pre></div>
 </td></tr></table>
-
 <p>可以看出每个预测变量在这个空间范围内都有很大程度的差异，其变化范围也有很大的跨度，说明不同的郊区的人生活情况非常不同。</p>
 <p>（e） 该数据集里的郊区有多少在查尔斯河岸附近?</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">sum</span><span class="p">(</span>Boston<span class="o">$</span>chas<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 35
 </pre></div>
 </td></tr></table>
-
 <p>（f）该数据集里城镇生师比的中位数是多少?</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>median<span class="p">(</span>Boston<span class="o">$</span>ptratio<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 19.05
 </pre></div>
 </td></tr></table>
-
 <p>（g） 业主自用住房的中位数最小的波士顿郊区是哪个?该郊区其他预测变量的取值是多少，这些预测变量在各自总体的分布上是什么水平?对所发现的现象作评论。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">order</span><span class="p">(</span>Boston<span class="o">$</span>medv<span class="p">)[</span><span class="m">1</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 399
 </pre></div>
 </td></tr></table>
-
 <p>业主自用住房的中位数最小的波士顿郊区是第399个</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Boston<span class="p">[</span><span class="kp">order</span><span class="p">(</span>Boston<span class="o">$</span>medv<span class="p">)[</span><span class="m">1</span><span class="p">],]</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2876,13 +2703,11 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ## 399 30.59    5
 </pre></div>
 </td></tr></table>
-
 <p>该城镇的数据中，对犯罪率有较重要影响的变量取值均非常极端，且其犯罪率也非常高，说明这些变量对犯罪率确实有非常强的影响。</p>
 <p>（h）在该数据集里，有多少个郊区居民平均居住房间数量超过 7 了呢?超过 8 个房间的郊区数呢?讨论居民平均居住房间数超过 8 个的郊区特征。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">attach</span><span class="p">(</span>Boston<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## The following object is masked from data (pos = 8):
@@ -2890,7 +2715,6 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ##     age
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## The following object is masked from data (pos = 9):
@@ -2898,19 +2722,15 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ##     age
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">dim</span><span class="p">(</span>Boston<span class="p">[</span><span class="kp">rm</span><span class="o">&gt;</span><span class="m">7</span><span class="p">,])[</span><span class="m">1</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 64
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">dim</span><span class="p">(</span>Boston<span class="p">[</span><span class="kp">rm</span><span class="o">&gt;</span><span class="m">8</span><span class="p">,])[</span><span class="m">1</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
-
 <p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 13
 </pre></div>
 </td></tr></table>
@@ -2918,7 +2738,6 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Boston<span class="p">[</span><span class="kp">rm</span><span class="o">&gt;</span><span class="m">8</span><span class="p">,]</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2976,11 +2795,9 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ## 365  5.29 21.9
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>datarange<span class="p">(</span>Boston<span class="p">[</span><span class="kp">rm</span><span class="o">&gt;</span><span class="m">8</span><span class="p">,],</span><span class="kp">dim</span><span class="p">(</span>Boston<span class="p">)[</span><span class="m">2</span><span class="p">])</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -3012,11 +2829,9 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ## [14,] &quot;medv:    21.9-50&quot;
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>datameanvar<span class="p">(</span>Boston<span class="p">[</span><span class="kp">rm</span><span class="o">&gt;</span><span class="m">8</span><span class="p">,],</span><span class="kp">dim</span><span class="p">(</span>Boston<span class="p">)[</span><span class="m">2</span><span class="p">])</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -3048,11 +2863,9 @@ datameanvar<span class="p">(</span>Auto<span class="p">,</span><span class="kp">
 ## [14,] &quot;medv:    mean 44.2 var 65&quot;
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">detach</span><span class="p">(</span>Boston<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p>在与犯罪率关系较强的变量中，这些郊区的数据更优，呈现出更好的城市面貌，使得犯罪率较其他数据有非常明显的下降。</p>
 <h2 id="_4">参考文献<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>[1] James G , Witten D , Hastie T , et al. An Introduction to Statistical Learning[M]. Springer New York, 2013.</p>

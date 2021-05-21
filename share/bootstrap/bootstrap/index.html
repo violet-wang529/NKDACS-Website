@@ -1147,7 +1147,6 @@ Tboot<span class="p">[</span>i<span class="p">]</span><span class="o">&lt;-</spa
 se<span class="o">&lt;-</span><span class="kp">sqrt</span><span class="p">(</span>variance<span class="p">(</span>Tboot<span class="p">))</span>
 </pre></div>
 </td></tr></table>
-
 <p>这个过程中运用了两个近似：第一个近似为用<span><span class="MathJax_Preview">V_{\hat{F_{n}}}(T_{n})</span><script type="math/tex">V_{\hat{F_{n}}}(T_{n})</script></span>来近似<span><span class="MathJax_Preview">V_{F}(T_{n})</span><script type="math/tex">V_{F}(T_{n})</script></span>，这里的逼近误差取决于<span><span class="MathJax_Preview">\hat{F_{n}}</span><script type="math/tex">\hat{F_{n}}</script></span>与<span><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span>的接近程度，由样本量<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>控制，并不能通过Bootstrap法减小；而第二个近似为用<span><span class="MathJax_Preview">v_{boot}</span><script type="math/tex">v_{boot}</script></span>来近似<span><span class="MathJax_Preview">V_{\hat{F_{n}}}(T_{n})</span><script type="math/tex">V_{\hat{F_{n}}}(T_{n})</script></span>，这个近似的误差由重抽样样本量<span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>控制，随着<span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>趋于无穷而趋为零。</p>
 <h2 id="bootstrap_4">Bootstrap置信区间<a class="headerlink" href="#bootstrap_4" title="Permanent link">&para;</a></h2>
 <p>类似于方差的估计，通过Bootstrap, 有以下3种方式可以估计置信区间.</p>
@@ -1278,7 +1277,6 @@ data<span class="o">=</span><span class="kt">data.frame</span><span class="p">(<
 data   <span class="c1"># raw data</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1298,7 +1296,6 @@ data   <span class="c1"># raw data</span>
 ## 8       8   18806 29044 26325       10238   -2719
 </pre></div>
 </td></tr></table>
-
 <blockquote>
 <p>Let Z = old-placebo and Y = new-old. The Food and Drug Administration (FDA) requirement for bioequivalence is that <span><span class="MathJax_Preview">|\theta|\le .20</span><script type="math/tex">|\theta|\le .20</script></span> where <span><span class="MathJax_Preview">\theta = \frac{\mathbb{E}_F(Y)}{\mathbb{E}_F(Z)}</span><script type="math/tex">\theta = \frac{\mathbb{E}_F(Y)}{\mathbb{E}_F(Z)}</script></span>.</p>
 </blockquote>
@@ -1320,11 +1317,9 @@ theta_hat<span class="o">=</span><span class="kp">mean</span><span class="p">(</
 theta_hat        <span class="c1">#  estimated theta (theta hat)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] -0.0713061
 </pre></div>
 </td></tr></table>
-
 <p>首先计算得到<span><span class="MathJax_Preview">\hat\theta=-.071</span><script type="math/tex">\hat\theta=-.071</script></span>, <span><span class="MathJax_Preview">|\hat \theta|\le.20</span><script type="math/tex">|\hat \theta|\le.20</script></span>. 在通过Bootstrap确定置信区间.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -1355,15 +1350,12 @@ boot_theta<span class="o">&lt;-</span><span class="kp">replicate</span><span cla
 sd<span class="p">(</span>boot_theta<span class="p">)</span>   <span class="c1">#标准差</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.09792018
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>hist<span class="p">(</span>boot_theta<span class="p">)</span> <span class="c1">#分布</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/Bootstrap-1.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -1378,23 +1370,19 @@ PivI<span class="o">=</span>quantile<span class="p">(</span><span class="m">2</s
 PivI   <span class="c1"># 95% pivotal confidence interval</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##        2.5%       97.5%
 ## -0.28406678  0.08908286
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PerI   <span class="c1"># 95% percentile interval</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##       2.5%      97.5%
 ## -0.2316951  0.1414546
 </pre></div>
 </td></tr></table>
-
 <p>通过Bootstrap模拟, 我们可以估计<span><span class="MathJax_Preview">\hat\theta</span><script type="math/tex">\hat\theta</script></span>的标准差为.098. <span><span class="MathJax_Preview">\hat\theta</span><script type="math/tex">\hat\theta</script></span> 95% pivotal confidence interval 为 (-0.284, 0.060); 95% percentile interval 为(-0.232, 0.083).</p>
 <p>因为<span><span class="MathJax_Preview">(-0.284, 0.060) \nsubseteq (-.2, .2)</span><script type="math/tex">(-0.284, 0.060) \nsubseteq (-.2, .2)</script></span>, <span><span class="MathJax_Preview">(-0.232, 0.083) \nsubseteq (-.2, .2)</span><script type="math/tex">(-0.232, 0.083) \nsubseteq (-.2, .2)</script></span>, 在95%的置信水平上, <span><span class="MathJax_Preview">|\hat\theta|</span><script type="math/tex">|\hat\theta|</script></span>不小于0.2.</p>
 <h3 id="23">方法2与方法3的对比<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
@@ -1435,7 +1423,6 @@ x<span class="o">&lt;-</span><span class="kt">data.frame</span><span class="p">(
 x    <span class="c1"># view raw data</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1469,7 +1456,6 @@ x    <span class="c1"># view raw data</span>
 ## 15 594 3.96
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1481,11 +1467,9 @@ theta_hat<span class="o">&lt;-</span>cor<span class="p">(</span>x<span class="o"
 theta_hat    <span class="c1"># estimated correlation coefficient</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.5459189
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1511,11 +1495,9 @@ boot_theta<span class="o">&lt;-</span><span class="kp">replicate</span><span cla
 <span class="kp">head</span><span class="p">(</span>boot_theta<span class="p">)</span>  <span class="c1"># view Bootstrap sample</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.3740009 0.2912169 0.9014656 0.7495317 0.9369355 0.5049581
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">## Estimate the standard error using the Bootstrap.</span>
@@ -1523,11 +1505,9 @@ boot_theta<span class="o">&lt;-</span><span class="kp">replicate</span><span cla
 sd<span class="p">(</span>boot_theta<span class="p">)</span>  <span class="c1"># estimated sd of theta hat</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.1872623
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1545,11 +1525,9 @@ CI_normal<span class="o">&lt;-</span>theta_hat<span class="o">+</span>sd<span cl
 CI_normal  <span class="c1"># 95% normal CI</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.1788915 0.9129464
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1561,13 +1539,11 @@ CI_pivotal<span class="o">&lt;-</span>quantile<span class="p">(</span>theta_hat<
 CI_pivotal    <span class="c1"># 95% pivotal CI</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      2.5%     97.5%
 ## 0.1594942 0.8815078
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1579,13 +1555,11 @@ CI_percentile<span class="o">&lt;-</span>quantile<span class="p">(</span>boot_th
 CI_percentile  <span class="c1"># 95% percentile CI</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      2.5%     97.5%
 ## 0.2103301 0.9323437
 </pre></div>
 </td></tr></table>
-
 <h3 id="2">习题2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p><strong>(Computer Experiment.) Conduct a simulation to compare the various Bootstrap confidence interval methods. Let <span><span class="MathJax_Preview">n = 50</span><script type="math/tex">n = 50</script></span> and let  <span><span class="MathJax_Preview">T(F)=\int(x-\mu)^3dF(x)/{\sigma^3}</span><script type="math/tex">T(F)=\int(x-\mu)^3dF(x)/{\sigma^3}</script></span> be the skewness. Draw <span><span class="MathJax_Preview">Y_1, \cdots , Y_n \sim N(0, 1)</span><script type="math/tex">Y_1, \cdots , Y_n \sim N(0, 1)</script></span> and set <span><span class="MathJax_Preview">X_i = e^{Y_i}</span><script type="math/tex">X_i = e^{Y_i}</script></span>, <span><span class="MathJax_Preview">i = 1,\cdots, n</span><script type="math/tex">i = 1,\cdots, n</script></span>. Construct the three types of Bootstrap 95 percent intervals for <span><span class="MathJax_Preview">T(F)</span><script type="math/tex">T(F)</script></span> from the data <span><span class="MathJax_Preview">X_1,\cdots ,X_n</span><script type="math/tex">X_1,\cdots ,X_n</script></span>. Repeat this whole thing many times and estimate the true coverage of the three intervals.</strong></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
@@ -1627,11 +1601,9 @@ tf_hat<span class="o">&lt;-</span>skew<span class="p">(</span>x<span class="p">)
 tf_hat   <span class="c1"># estimated skewness</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1.577831
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1669,11 +1641,9 @@ CI_normal<span class="o">&lt;-</span>tf_hat<span class="o">+</span>sd<span class
 CI_normal  <span class="c1"># 95% normal CI</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.8295817 2.3260806
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1685,13 +1655,11 @@ CI_pivotal<span class="o">&lt;-</span>quantile<span class="p">(</span>tf_hat<spa
 CI_pivotal    <span class="c1"># 95% pivotal CI</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      2.5%     97.5%
 ## 0.6466346 2.1780094
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1703,13 +1671,11 @@ CI_percentile<span class="o">&lt;-</span>quantile<span class="p">(</span>tf_boot
 CI_percentile  <span class="c1"># 95% percentile CI</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      2.5%     97.5%
 ## 0.9776529 2.5090277
 </pre></div>
 </td></tr></table>
-
 <p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1772,11 +1738,9 @@ theta_hat<span class="o">&lt;-</span><span class="kp">as.numeric</span><span cla
 theta_hat  <span class="c1"># estimated theta</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1.398754
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1802,11 +1766,9 @@ theta_boot<span class="o">&lt;-</span><span class="kp">replicate</span><span cla
 <span class="kp">head</span><span class="p">(</span>theta_boot<span class="p">)</span>  <span class="c1"># view Bootstrap sample</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1.1268643 1.3457015 0.8375122 1.7733377 1.7208744 1.6869699
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">##  i. Normal interval with standard error from the Bootstrap</span>
@@ -1814,11 +1776,9 @@ theta_boot<span class="o">&lt;-</span><span class="kp">replicate</span><span cla
 sd<span class="p">(</span>theta_boot<span class="p">)</span>  <span class="c1">#  standard error from the Bootstrap</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.3034024
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>norm_CI<span class="o">&lt;-</span>theta_hat<span class="o">+</span>sd<span class="p">(</span>theta_boot<span class="p">)</span><span class="o">*</span>qnorm<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">.025</span><span class="p">,</span><span class="m">.0975</span><span class="p">))</span>
@@ -1826,19 +1786,15 @@ sd<span class="p">(</span>theta_boot<span class="p">)</span>  <span class="c1">#
 norm_CI  <span class="c1"># 95% normal CI</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.8040967 1.0055666
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>norm_CI<span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">-</span>norm_CI<span class="p">[</span><span class="m">1</span><span class="p">]</span>  <span class="c1"># length of normal CI</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.2014699
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1850,21 +1806,17 @@ percentile_CI<span class="o">&lt;-</span>quantile<span class="p">(</span>theta_b
 percentile_CI    <span class="c1">#  95% percentile CI</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      2.5%     97.5%
 ## 0.8152139 1.9755735
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">as.numeric</span><span class="p">(</span>percentile_CI<span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">-</span>percentile_CI<span class="p">[</span><span class="m">1</span><span class="p">])</span>  <span class="c1"># length of percentile CI</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1.16036
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1876,21 +1828,17 @@ pivotal_CI<span class="o">&lt;-</span>quantile<span class="p">(</span>theta_hat<
 pivotal_CI  <span class="c1">#  95% pivotal CI</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      2.5%     97.5%
 ## 0.8219355 1.9822950
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">as.numeric</span><span class="p">(</span>pivotal_CI<span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">-</span>pivotal_CI<span class="p">[</span><span class="m">1</span><span class="p">])</span>  <span class="c1"># length of pivotal CI</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1.16036
 </pre></div>
 </td></tr></table>
-
 <h3 id="4">习题4<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p><strong>Let <span><span class="MathJax_Preview">X_1, \cdots ,X_n</span><script type="math/tex">X_1, \cdots ,X_n</script></span> be distinct observations (no ties). Show that there are <span><span class="MathJax_Preview">\displaystyle {2n-1} \choose n</span><script type="math/tex">\displaystyle {2n-1} \choose n</script></span> distinct Bootstrap samples.</strong></p>
 <ul>
@@ -1941,32 +1889,26 @@ high<span class="o">&lt;-</span><span class="m">2</span><span class="o">*</span>
 se
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 13.0223
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">print</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span>low<span class="p">,</span>high<span class="p">))</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##    97.5%     2.5%
 ## 108.1646 159.4769
 </pre></div>
 </td></tr></table>
-
 <p><span><span class="MathJax_Preview">(b)</span><script type="math/tex">(b)</script></span></p>
 <p>可以通过随机变量函数的密度函数来计算<span><span class="MathJax_Preview">\hat{\theta}</span><script type="math/tex">\hat{\theta}</script></span>真实的密度函数，得到真实的密度函数为<span><span class="MathJax_Preview">{\phi}_{(5,0.01)}(lny)*\frac{1}{y}</span><script type="math/tex">{\phi}_{(5,0.01)}(lny)*\frac{1}{y}</script></span>。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>hist<span class="p">(</span>theta<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-2-1.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curve<span class="p">(</span><span class="kp">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="kp">log</span><span class="p">(</span>x<span class="p">)</span><span class="m">-5</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="m">0.02</span><span class="p">)</span><span class="o">/</span>x<span class="o">/</span><span class="kp">sqrt</span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="kc">pi</span><span class="p">)</span><span class="o">/</span><span class="m">0.1</span><span class="p">,</span><span class="m">50</span><span class="p">,</span><span class="m">250</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-2-2.png" /><!-- --></p>
 <p>经过比较可以看出，Bootstrap得到的<span><span class="MathJax_Preview">\hat{\theta}</span><script type="math/tex">\hat{\theta}</script></span>的柱状图较好地反映了真实的密度函数。</p>
 <h3 id="7">习题7<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
@@ -1990,12 +1932,10 @@ thetahat<span class="o">&lt;-</span><span class="kt">c</span><span class="p">(</
 hist<span class="p">(</span>thetahat<span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-3-1.png" /><!-- --></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curve<span class="p">(</span><span class="m">50</span><span class="o">*</span>x<span class="o">^</span><span class="p">(</span><span class="m">49</span><span class="p">),</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p><img alt="" src="../figure-html/unnamed-chunk-3-2.png" /><!-- --></p>
 <p>可以看到，Bootstrap法得到的柱状图对密度函数的描述并不是很好。</p>
 <p><span><span class="MathJax_Preview">(b)</span><script type="math/tex">(b)</script></span></p>
@@ -2004,11 +1944,9 @@ hist<span class="p">(</span>thetahat<span class="p">)</span>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="m">1-1</span><span class="o">/</span><span class="kp">exp</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.6321206
 </pre></div>
 </td></tr></table>
-
 <h1 id="_5">参考文献<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
 <p>[1] Wasserman L. All of Statistics: A Concise Course in Statistical Inference[M]. Springer, 2010: 107-116</p>
 <p>[2] Efron B. Bootstrap Methods: Another Look at the Jackknife[J]. Annals of Statistics, 1979, 7(1): 1-26.</p>
